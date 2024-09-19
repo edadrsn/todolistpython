@@ -46,7 +46,7 @@ def show_delete_list():
         for task in deleted_tasks:
             deleted_tasks_listbox.insert(tkinter.END, task)
     else:
-        no_task_label = tkinter.Label(toplevel, text="NO DELETED TASK",font="Arial 10 bold ",bg="#CDC1FF")
+        no_task_label = tkinter.Label(toplevel, text="NO DELETED TASK",font="Arial 11 bold ",bg="#CDC1FF")
         no_task_label.pack()
 
     close_button = tkinter.Button(toplevel, text="Close Window", fg="#F5F5F5", bg="#8967B3",font="Arial 12 italic bold", command=toplevel.destroy)
@@ -73,9 +73,9 @@ def save_tasks():
 
 def load_tasks():
     try:
-        with open("my_todo_list.txt", "r", encoding="utf-8") as file:  # "r" ile dosyayı okuma modunda aç
+        with open("my_todo_list.txt", "r", encoding="utf-8") as file:
             for line in file:
-                task_listbox.insert(tkinter.END, line.strip())  # Her satırı Listbox'a ekle
+                task_listbox.insert(tkinter.END, line.strip())
     except FileNotFoundError:
         pass
 
@@ -106,7 +106,7 @@ label2.place(x=0,y=200)
 task_listbox=tkinter.Listbox(width=70,height=12,bg="#E5D9F2",font="bold")
 task_listbox.place(x=0,y=230)
 
-close_window=tkinter.Button(text="Exit Todo",bg="#2E073F",fg="#FFFFFF",font="Arial 12 bold",command=my_window.destroy)
+close_window=tkinter.Button(text="Exit Todo",bg="#2E073F",fg="#FFFFFF",font="Arial 13 bold",command=my_window.destroy)
 close_window.place(x=250,y=470)
 
 my_window.mainloop()
